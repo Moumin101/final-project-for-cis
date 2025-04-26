@@ -1,0 +1,30 @@
+
+#how to access this final project (when its done)
+
+#go to (https://www.roblox.com/login) and sign up with an account if you don't have one
+
+#after that, go to [insert link here because obviously it's not ready yet]
+[click the play button]
+
+#ALL SOUND EFFECT CREDITS GO TO THE SOUND PRODUCERS OF HI-Fi RUSH
+#[this website for ripping the audio files + other stuff]
+#https://spritedatabase.net/game/3613
+#Roblox dev forums and youtube tutorial videos regarding lua scripting
+
+
+Overall Thoughts:
+
+Before I had the opportunity to work on this project, I would always used to daydream about creating random roblox games, and that one of them would be the next best thing that would become very popular on the platform. I knew nothing much wouldn't come out of it, so I would always just formulate my ideas in a google doc and go about my day. However, the creation of multiple roblox ideas quickly came to a halt when my older sister purchased a game called Hi-Fi Rush![or what I like to call it: "The Greatest Saturday Morning Cartoon You Watched Growing Up: The Video Game"] as a late birthday game present, and I immediately knew that when I would have the opportunity to learn how to code in Roblox, the first thing I would do would be to recreate Hi-Fi Rush in some shape or form. And the opportunity arose for me to work on that when it was time to submit a proposal for the final project.
+
+I am a very tenacious person, so I knew what uphill battle I would have to fight in order to get to the top [which would be learning another language entirely while also learning my own.
+
+Learning can be fun. Depending on what it is of course. I thought I could be a jester, but it turns out I can barely juggle/cannot juggle at all, and my Exam 2 grade paid the price. Lua can be frustrating at times, with having to put an "end" in the next line of every function, but other than that, it has so many functions that I learned over the course of nearly a month that I applied to this project. Like with coding, there were frustrating moments, and moments that clicked. 
+
+The most difficults part was making a function that made sure that the player was in time 24/7, as Roblox is an online platform that heavily relies on having low ping/great internet, so making sure that the player was in time regardless of internet status was an important factor when working on the project, and actually writing the funcitons that take in player inputs in order to trigger the attacks, while also making sure that the animation plays regardless of how on beat it is, was *awful.* Geniuenly the worst part besides animating. What made it not as awful, was that Roblox would auto-fill in your code for you [or you could ask for help by using it's assistant], so I didn't have to spend time making sure that every function name had the correct uppercase and lowercase wordings.
+
+The second most difficult part was animating the attacks. I have worked on an animation projecet before back in high school for a competition (My drawing skills were absolute garbage, and I didn't have much knowledge on animating either so please don't go poking around.), so I was a bit familiar with animating key frames. The software that I used to animate is called Moon Animator 2, and one of it's features was that it would auto generate inbetween frames, so I only had to worry about animating the key frames of the attack, and making sure that they were smooth enough.
+
+Speaking of key frames, since the track that was playing in the background had a BPM of 140, I had to make sure that there were key-frames on frames 0(initial start), 13(beginning movement), 26(action movement), 52(the impact frame that the attack lands on the dummy), and 78(reset pose). 
+
+In the end, I'm decently satisfied with the end result. I'll most likely[definelty] work on it some more over the summer/when I have free time.
+Thank you for making me pushing myself into learing new things, and essentially bringing my imagination to life.
