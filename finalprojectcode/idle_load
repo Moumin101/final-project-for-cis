@@ -1,0 +1,24 @@
+# -- this script loads the idle pose that the player takes upon loading/joining the game
+
+local character = script.Parent
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local idleAnim = Instance.new("Animation")
+idleAnim.AnimationId = "rbxassetid://135768555602843" # -- animation asset that I made and uploaded
+
+local loadedAnim
+
+
+humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
+	if humanoid.MoveDirection.Magnitude == 0 then
+		if not loadedAnim or not loadedAnim.IsPlaying then
+			loadedAnim = humanoid:LoadAnimation(idleAnim)
+			loadedAnim:Play()
+		end
+	else
+		if loadedAnim and loadedAnim.IsPlaying then
+			loadedAnim:Stop()
+		end
+	end
+end)
