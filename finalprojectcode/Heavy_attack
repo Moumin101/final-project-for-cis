@@ -1,0 +1,22 @@
+local Players = game:GetService("Players")
+local ContextActionService = game:GetService("ContextActionService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local animator = humanoid:WaitForChild("Animator")
+
+local heavyAttackAnim = Instance.new("Animation")
+heavyAttackAnim.AnimationId = "rbxassetid://118936465133422" 
+local heavyAttackTrack = animator:LoadAnimation(heavyAttackAnim)
+
+local function onHeavyAttack(actionName, inputState, inputObject)
+	if inputState == Enum.UserInputState.Begin then
+		if not heavyAttackTrack.IsPlaying then
+			heavyAttackTrack:Play()
+		end
+	end
+end
+
+ContextActionService:BindAction("HeavyAttack", onHeavyAttack, false, Enum.KeyCode.G)
+
