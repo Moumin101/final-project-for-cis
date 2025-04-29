@@ -1,0 +1,16 @@
+local character = script.Parent
+local rightHand = character:WaitForChild("RightHand")
+
+local replicatedWeapon = game:GetService("ReplicatedStorage"):WaitForChild("weapon"):Clone() -this takes the weapon inside the replicatedStorage area and attatches it to the right hand
+replicatedWeapon.Parent = character
+
+
+local handle = replicatedWeapon:WaitForChild("Handle")
+handle.Anchored = false
+
+local weld = Instance.new("Motor6D")
+weld.Name = "WeaponWeld"
+weld.Part0 = rightHand
+weld.Part1 = handle
+weld.C0 = CFrame.new(0, -1, 0) -- this changes weapon hand angle
+weld.Parent = rightHand -guitar attatches to right hand [makes it easier so that I can animate both the model and right hand]
