@@ -1,0 +1,38 @@
+local BPM = 140
+local metronome = 60 / BPM
+local nextBeat = tick() + metronome
+
+local BeatTracker = {}
+
+function BeatTracker.GetNextBeat()
+	return nextBeat
+end
+
+function BeatTracker.GetMetronome()
+	return metronome
+end
+
+function BeatTracker.IsOnBeat()
+	local now = tick()
+	local offset = (now - nextBeat + metronome) % metronome
+	return offset < 0.1 or offset > (metronome - 0.1)
+end
+
+BeatTracker.Beat = Instance.new("BindableEvent")
+
+task.spawn(function()
+	while true do
+		local now = tick()
+		local timeToNext = nextBeat - now
+		if timeToNext > 0 then
+			task.wait(timeToNext)
+		end
+
+		BeatTracker.Beat:Fire()
+		nextBeat = tick() + metronome
+	end
+end)
+
+return BeatTracker
+
+--there wasn't any real timer for making sure that the inputs went off on beat (when it came to actually scripting the attacks), so this is technically unused code, but I left it inside anyways
