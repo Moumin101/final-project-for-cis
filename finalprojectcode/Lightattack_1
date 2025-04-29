@@ -1,0 +1,17 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local animator = humanoid:WaitForChild("Animator")
+
+local UserInputService = game:GetService("UserInputService")
+
+local humbucker1 = Instance.new("Animation")
+humbucker1.AnimationId = "rbxassetid://105451467039816" 
+
+local attackTrack = animator:LoadAnimation(humbucker1)
+
+UserInputService.InputBegan:Connect(function(input, processed)
+	if not processed and input.KeyCode == Enum.KeyCode.F then
+		attackTrack:Play()
+	end
+end)
