@@ -1,0 +1,49 @@
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+-- DASH SETTINGS
+local DashDuration = 0.4 -- seconds
+local Rate = 0.02 -- how fast it updates
+local DashStrength = 90 -- starting speed
+local MinDashStrength = DashStrength * 0.15 -- minimum speed
+local Keybind = Enum.KeyCode.LeftShift -- Dash key (Shift)
+
+local IsDashing = false
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+	if input.KeyCode == Keybind and not IsDashing then
+		IsDashing = true
+
+		local bodyVelocity = Instance.new("BodyVelocity")
+		bodyVelocity.MaxForce = Vector3.new(1e5, 0, 1e5) 
+		bodyVelocity.Parent = humanoidRootPart
+
+		local amountOfIterations = DashDuration / Rate
+		local removalPerIteration = DashStrength / amountOfIterations
+
+		for i = 1, amountOfIterations do
+			local moveDirection = humanoidRootPart.CFrame.LookVector 
+
+			-- Set the new velocity
+			bodyVelocity.Velocity = moveDirection * DashStrength
+
+			-- Smoothly decrease dash strength
+			if DashStrength > MinDashStrength then
+				DashStrength = DashStrength - removalPerIteration
+				if DashStrength < MinDashStrength then
+					DashStrength = MinDashStrength
+				end
+			end
+
+			RunService.Heartbeat:Wait(Rate)
+		end
+
+		bodyVelocity:Destroy()
+		task.wait(0.1) -- small cooldown before allowing another dash
+		IsDashing = false
+	end
+end)
