@@ -1,0 +1,25 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local animator = humanoid:WaitForChild("Animator")
+
+local walkingAnim = Instance.new("Animation")
+walkingAnim.AnimationId = "rbxassetid://128942928369045"
+
+local walkTrack = animator:LoadAnimation(walkingAnim)
+
+local isWalking = false
+
+humanoid.Running:Connect(function(speed)
+	if speed > 1 then
+		if not isWalking then
+			walkTrack:Play()
+			isWalking = true
+		end
+	else
+		if isWalking then
+			walkTrack:Stop()
+			isWalking = false
+		end
+	end
+end)
