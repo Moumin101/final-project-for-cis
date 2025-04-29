@@ -1,15 +1,9 @@
 
-#how to access this final project (when its done)
-
-#go to (https://www.roblox.com/login) and sign up with an account if you don't have one
-
-#after that, go to [insert link here because obviously it's not ready yet]
-[click the play button]
 
 #ALL SOUND EFFECT CREDITS GO TO THE SOUND PRODUCERS OF HI-Fi RUSH
 #[this website for ripping the audio files + other stuff]
 #https://spritedatabase.net/game/3613
-#Roblox dev forums and youtube tutorial videos regarding lua scripting
+#Roblox dev forums and youtube tutorial videos regarding lua scripting because jesus this was kinda rough
 
 
 Overall Thoughts:
@@ -26,5 +20,5 @@ The second most difficult part was animating the attacks. I have worked on an an
 
 Speaking of key frames, since the track that was playing in the background had a BPM of 140, I had to make sure that there were key-frames on frames 0(initial start), 13(beginning movement), 26(action movement), 52(the impact frame that the attack lands on the dummy), and 78(reset pose). 
 
-In the end, I'm decently satisfied with the end result. I'll most likely[definelty] work on it some more over the summer/when I have free time.
-Thank you for making me pushing myself into learing new things, and essentially bringing my imagination to life.
+In the end, I'm not really that satisfied with the end result. I'll most likely[definelty] work on it some more over the summer/when I have free time.
+Thank you for making me pushing myself into learing new things, and essentially bringing my wandering thoughts to life
